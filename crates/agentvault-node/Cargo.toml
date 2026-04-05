@@ -1,0 +1,28 @@
+[package]
+name = "agentvault-node"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "TypeScript/Node.js bindings for Agent Vault SDK"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+agentvault-core = { workspace = true }
+agentvault-sentinel = { workspace = true }
+agentvault-witness = { workspace = true }
+agentvault-learner = { workspace = true }
+agentvault-embed = { workspace = true }
+napi = { version = "2", features = ["async", "napi8", "serde-json"] }
+napi-derive = "2"
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+tokio = { workspace = true }
+rust_decimal = { workspace = true }
+
+[build-dependencies]
+napi-build = "2"

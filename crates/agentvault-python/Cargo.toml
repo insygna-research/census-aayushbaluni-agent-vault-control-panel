@@ -1,0 +1,26 @@
+[package]
+name = "agentvault-python"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Python bindings for Agent Vault SDK"
+
+[lib]
+name = "agentvault"
+crate-type = ["cdylib"]
+
+[dependencies]
+agentvault-core = { workspace = true }
+agentvault-sentinel = { workspace = true }
+agentvault-witness = { workspace = true }
+agentvault-learner = { workspace = true }
+agentvault-embed = { workspace = true }
+pyo3 = { version = "0.23", features = ["extension-module"] }
+pyo3-async-runtimes = { version = "0.23", features = ["tokio-runtime"] }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+tokio = { workspace = true }
+rust_decimal = { workspace = true }
+parking_lot = "0.12"
