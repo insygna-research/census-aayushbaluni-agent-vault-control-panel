@@ -10,9 +10,11 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
-  <a href="https://github.com/agentvault/agent-vault-control-plane/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/agentvault/agent-vault-control-plane/ci.yml?label=CI" alt="CI" /></a>
-  <a href="https://github.com/agentvault/agent-vault-control-plane/releases"><img src="https://img.shields.io/github/v/release/agentvault/agent-vault-control-plane?label=Release" alt="Release" /></a>
+  <a href="https://github.com/aayushbaluni/agent-vault-control-panel/stargazers"><img src="https://img.shields.io/github/stars/aayushbaluni/agent-vault-control-panel?style=social" alt="GitHub Stars" /></a>
+  <a href="https://github.com/aayushbaluni/agent-vault-control-panel/network/members"><img src="https://img.shields.io/github/forks/aayushbaluni/agent-vault-control-panel?style=social" alt="GitHub Forks" /></a>
   <img src="https://img.shields.io/badge/rust-1.77%2B-orange.svg" alt="Rust 1.77+" />
+  <img src="https://img.shields.io/badge/python-3.9%2B-blue.svg" alt="Python 3.9+" />
+  <img src="https://img.shields.io/badge/node-18%2B-green.svg" alt="Node 18+" />
 </p>
 
 <p align="center">
@@ -840,3 +842,13 @@ This project uses [BDFL governance](GOVERNANCE.md). Interaction is governed by t
 ## License
 
 [MIT License](LICENSE) — Copyright (c) 2026 Agent Vault Contributors
+
+---
+
+<p align="center">
+  <strong>If Agent Vault is useful to you, consider giving it a star — it helps others discover the project.</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/aayushbaluni/agent-vault-control-panel/stargazers"><img src="https://img.shields.io/github/stars/aayushbaluni/agent-vault-control-panel?style=for-the-badge&logo=github&label=Star%20on%20GitHub" alt="Star on GitHub" /></a>
+</p>
