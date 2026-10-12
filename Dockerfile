@@ -17,7 +17,9 @@ RUN cargo chef prepare --recipe-path recipe.json
 # Stage 3: Builder — build dependencies then application
 FROM chef AS builder
 COPY --from=planner /app/recipe.json recipe.json
-RUN cargo chef cook --release --recipe-path recipe.json
+# Cook only what the image ships: the workspace also holds the Python and Node bindings (cdylibs that each
+# link the whole stack, ONNX Runtime included), and cooking them stalled the build for 30+ minutes.
+RUN cargo chef cook --release --recipe-path recipe.json -p agentvault-server -p agentvault-cli
 COPY . .
 # CLI package binary name is `agentvault` (see crates/agentvault-cli/Cargo.toml).
 RUN cargo build --release --bin agentvault-server --bin agentvault
