@@ -5,9 +5,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let proto_root = manifest_dir.join("../../proto");
     println!("cargo:rerun-if-changed={}", proto_root.display());
 
-    std::env::set_var("PROTOC", protobuf_src::protoc());
-    let include = protobuf_src::include();
-
     tonic_build::configure()
         .build_client(true)
         .build_server(false)
@@ -20,8 +17,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 proto_root.join("agentvault/approval/v1/approval.proto"),
                 proto_root.join("agentvault/learner/v1/learner.proto"),
             ],
-            &[proto_root, include],
+            &[proto_root, PathBuf::from(include_dir())],
         )?;
 
     Ok(())
+}
+
+/// Well-known types (google/protobuf/*.proto) ship with the system protoc (`protobuf-compiler` +
+/// `libprotobuf-dev` in the Dockerfile). `PROTOC_INCLUDE` overrides the location.
+fn include_dir() -> String {
+    std::env::var("PROTOC_INCLUDE").unwrap_or_else(|_| "/usr/include".to_string())
 }

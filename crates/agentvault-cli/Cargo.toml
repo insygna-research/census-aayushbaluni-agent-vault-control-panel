@@ -32,7 +32,6 @@ colored = "2"
 
 [build-dependencies]
 tonic-build = { workspace = true }
-protobuf-src = "2.1"
 
 [dev-dependencies]
 assert_cmd = "2"

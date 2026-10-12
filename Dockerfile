@@ -3,8 +3,10 @@
 # also needs a recent toolchain. `rust-toolchain.toml` uses `stable`, so the first `cargo` run may
 # rustup-install a newer stable than the base image (expected).
 FROM rust:1-bookworm AS chef
+# protoc comes from apt: the protobuf-src crate compiled protobuf + abseil from C++ source inside a build
+# script, silently, and that alone ran the build past its 45-minute limit.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    pkg-config libssl-dev cmake build-essential \
+    pkg-config libssl-dev cmake build-essential protobuf-compiler libprotobuf-dev \
     && rm -rf /var/lib/apt/lists/*
 RUN cargo install cargo-chef --locked
 WORKDIR /app
